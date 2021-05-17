@@ -15,4 +15,90 @@ const sum = function(n1,n2){
 const checkTwoNumbers = function(n1, n2){
     return (n1===50 ? true : n2===50 ? true : n1+n2===50 ? true : false)
 }
-console.log("Ex - 2: " + checkTwoNumbers(25, 2))
+// console.log("Ex - 2: " + checkTwoNumbers(25, 2))
+
+// 3)
+// Create a function to remove a character at the specified position of a given string and return the new string.
+
+const removeChar = function(pos, str){
+    return str.slice(0, pos) + str.slice(pos+1)
+}
+// console.log("Ex - 3: " + removeChar(2, 'Strive'))
+
+// 4)
+//  Create a function to find the largest of three given integers.
+
+const largest = function(n1, n2, n3){
+   let large = n1
+   if(n2 >= n1) {
+       large = n2
+   }
+   if(n3 >= large){
+       large = n3
+   }
+   return large
+}
+// console.log("Ex - 4: " + largest(10, 7, 1))
+
+// 5)
+// Create a function to check whether two numbers are in range 40..60 or in the range 70..100 inclusive.
+const inRange = function(n1){
+    if(n1 >= 40 && n1 <= 60) {
+        return  `${n1} is in range 40...60`
+    } else if (n1 >= 70 && n1 <= 100){
+        return  `${n1} is in range 70...100`
+    } else {
+        return `${n1} is NOT in any range`
+    }
+}
+const checkRange = function(n1, n2){
+    return `${inRange(n1)} and ${inRange(n2)}`
+}
+// console.log("Ex - 5: " + checkRange(40, 70))
+
+// 6) 
+// Create a function that creates and returns the specified number of copies of a given string (positive number).
+const createCopies = function(copies, str){
+    let copyArr = ['']
+    for(i=0; i<copies; i++){
+        copyArr[i] = str
+    }
+    return copyArr
+}
+// console.log("Ex - 6: " + createCopies(10, 'Strive'))
+
+// 7)
+// Create a function that returns the city name of a given string, if the string begins with "Los" or "New", otherwise returns blank.
+const cityName = function(str){
+    if(str.includes('Los')) {
+        return 'Angeles'
+    } else if (str.includes('New')){
+        return 'York'
+    }
+}
+// console.log("Ex - 7: " + cityName('New Strive'))
+
+// 8)
+// Create a function to calculate the sum of three elements of a given array of integers of length 3.
+const sumArrElements = function(arr){
+    let sum = 0
+    for(i=0; i<3; i++){
+        sum = sum + arr[i]
+    }
+    return sum
+}
+// console.log("Ex - 8: " + sumArrElements([2,5,4]))
+
+// 9)
+// Create a function to test whether an array of integers of length 2 contains 1 or a 3. 
+const arrTestContain = function(arr){
+    return (arr.includes(1) ? `${arr} contains 1` : (arr.includes(3)) ? `${arr} contains 3` : `${arr} doesn't contains 1 nor 3`)
+}
+// console.log("Ex - 9: " + arrTestContain([3,7]))
+
+// 10)
+// Create a function to test whether an array of integers of length 2 does not contain 1 or a 3
+const arrTestNotContain = function(arr){
+    return (arr.includes(1) ? `${arr} contains 1` : (arr.includes(3)) ? `${arr} contains 3` : `${arr} doesn't contains 1 nor 3`)
+}
+console.log("Ex - 10: " + arrTestNotContain([9,7]))

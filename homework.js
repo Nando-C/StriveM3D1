@@ -166,4 +166,65 @@ const largestEven = function(arr){
 const checkOneNegative = function(n1, n2){
         return ((n1 * n2 < 0) ? `One of the given numbers is positive and the other is negative` : `Both numbers are either positive or negative`)
 }
-console.log("Ex - 15: " + checkOneNegative (-2, 4))
+// console.log("Ex - 15: " + checkOneNegative (-2, 4))
+
+// 16)
+// Create a function to create new string with first 3 characters are in lower case and the others in upper case. If the string length is less than 3 convert all the characters in upper case. 
+
+const newString = function(str){
+    return ((str.length < 3) ? str.toUpperCase() : str.slice(0, 3).toUpperCase() + str.slice(3) )
+}
+// console.log("Ex - 16: " + newString ('strivers'))
+
+// 17)
+// Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
+const sumInRange = function(n1, n2){
+    return ((n1 + n2 >= 50 && n1 + n2 <= 80) ? 65 : 80)
+}
+// console.log("Ex - 17: " + sumInRange(20, 30))
+
+// 18)
+// Create a function to convert a number to a string, the content of which depends on the number's factors. Follow next example:
+
+// If the number has 3 as a factor, output 'Diego'.
+// If the number has 5 as a factor, output 'Riccardo'.
+// If the number has 7 as a factor, output 'Stefano'.
+// If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
+// Examples
+// 28's factors are 1, 2, 4, 7, 14, 28.
+// this would be a simple "Stefano".
+// 30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
+// this would be a "DiegoRiccardo".
+// 34 has four factors: 1, 2, 17, and 34.
+// this would be "34".
+const numberToString = function(n1){
+    let newStr = ''
+    for(let i=1; i<=n1; i++){
+        if((n1 % i === 0) && (i === 3)){
+            newStr += 'Diego'
+        }
+        if((n1 % i === 0) && (i === 5)){
+            newStr += 'Riccardo'
+        }
+        if((n1 % i === 0) && (i === 7)){
+            newStr += 'Stefano'
+        } 
+    }
+    if( newStr.length === 0){
+        newStr = n1
+    }
+    return newStr
+}
+// console.log("Ex - 18: " + numberToString(30))
+
+// 19)
+// Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
+const acronym = function(str){
+    let words = str.split(' ')
+    let acronym = ''
+    for(let i=0; i<words.length; i++){
+        acronym += words[i].charAt(0).toUpperCase()
+    }
+    return acronym
+}
+console.log("Ex - 19: " + acronym('british broadcast corporation'))

@@ -101,4 +101,69 @@ const arrTestContain = function(arr){
 const arrTestNotContain = function(arr){
     return (arr.includes(1) ? `${arr} contains 1` : (arr.includes(3)) ? `${arr} contains 3` : `${arr} doesn't contains 1 nor 3`)
 }
-console.log("Ex - 10: " + arrTestNotContain([9,7]))
+// console.log("Ex - 10: " + arrTestNotContain([9,7]))
+
+// 11)
+// Create a function to find the longest string from a given array of strings.
+const longStr = function(arr){
+    let long = []
+    for(let i=0; i<arr.length; i++){
+        if (arr[i].length > long.length){
+            long = arr[i]
+        }
+    }
+    return long
+}
+// console.log("Ex - 11: " + longStr(['one', 'three', 'strivers', 'two', 'me']))
+
+// 12)
+// Create a function to find the types of a given angle.
+
+// Types of angles:
+//     Acute angle: An angle between 0 and 90 degrees.
+//     Right angle: An 90 degree angle.
+//     Obtuse angle: An angle between 90 and 180 degrees.
+//     Straight angle: A 180 degree angle.
+
+const angleType = function(ang){
+    return ((ang>=0 && ang < 90) ? `${ang} is an Acute angle` :
+            (ang === 90) ? `${ang} is a Right angle` :
+            (ang>=90 && ang < 180) ? `${ang} is an Obtuse angle` :
+            (ang === 180) ? `${ang} is a Straight angle` : `${ang} is a Reflex angle` )
+}
+// console.log("Ex - 12: " + angleType(181))
+
+// 13)
+// Create a function to find the index of the greatest element of a given array of integers
+const greatestElement = function(arr){
+    let max = -100000000
+    let index 
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] > max){
+            max = arr[i]
+            index = i
+        }
+    }
+    return index
+}
+// console.log("Ex - 13: " + greatestElement([1,2,3,4,50,6,7,8,9]))
+
+// 14)
+// Create a function to get the largest even number from an array of integers.
+const largestEven = function(arr){
+    let max = -1000000
+    for(let i=0; i<arr.length; i++){
+        if((arr[i] % 2 === 0) && (arr[i] > max)){
+                max = arr[i]
+        }
+    }
+    return max
+}
+// console.log("Ex - 14: " + largestEven([1,2,30,45,5,6,77,8,9]))
+
+// 15)
+// Create a function to check from two given integers, whether one is positive and another one is negative.
+const checkOneNegative = function(n1, n2){
+        return ((n1 * n2 < 0) ? `One of the given numbers is positive and the other is negative` : `Both numbers are either positive or negative`)
+}
+console.log("Ex - 15: " + checkOneNegative (-2, 4))
